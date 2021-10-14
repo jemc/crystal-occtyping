@@ -16,7 +16,10 @@ class OccTyping::TypeExpectation
   end
 
   def actual_type_string(term : Term)
-    "TODO"
+    typer = Typer.new
+    env = nil # TODO
+    type = typer.typeof(env, term)
+    type.pretty_inspect
   end
 
   def match(term)
